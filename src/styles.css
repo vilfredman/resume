@@ -1,1 +1,464 @@
-/* You can add global styles to this file, and also import other style files */
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500&family=Poppins:ital,wght@0,200;0,300;0,500;0,700;1,400;1,500&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: url("/assets/images/calculator_bg2.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgba(27, 80, 112, 0.65);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(29, 32, 40, 0.7);
+  border-radius: 20px;
+}
+
+html {
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+p {
+  color: black;
+  font-size: 1.4rem;
+  margin-top: 5px;
+  line-height: 2.5rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: black;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  text-align: center;
+}
+
+.section-title span {
+  color: crimson;
+}
+
+.section-title.ab {
+  color: #ffffff;
+}
+
+.cta {
+  display: inline-block;
+  padding: 10px 30px;
+  color: white;
+  background-color: transparent;
+  border: 2px solid crimson;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-top: 30px;
+  transition: 0.3s ease;
+  transition-property: background-color, color;
+}
+.cta:hover {
+  color: white;
+  background-color: crimson;
+}
+.brand h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: white;
+}
+.brand h1 span {
+  color: crimson;
+}
+
+
+/* Todo Styles */
+.todo-wrapper {
+  font-family: var(--font-family);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.todo-wrapper .todo{
+  width: 75vw;
+}
+
+/*Задній фон #todo*/
+#todo .p-paginator {
+  background: white;
+  border: solid #e9ecef;
+  border-width: 0;
+  border-radius: 0;
+}
+
+/*Неактивні цифри #todo*/
+#todo .p-paginator .p-paginator-pages .p-paginator-page {
+  color: #000;
+  border-radius: 5px;
+}
+
+/*Активна цифра, колір #todo*/
+
+#todo .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  color: #0014f6;
+}
+
+/*Колір для стрілок #todo*/
+#todo .p-paginator .p-paginator-first,
+#todo .p-paginator .p-paginator-prev,
+#todo .p-paginator .p-paginator-next,
+#todo .p-paginator .p-paginator-last {
+  color: black;
+  border-radius: 5px;
+}
+
+/*Hover для стрілок #todo*/
+#todo .p-paginator .p-paginator-first:not(.p-disabled):not(.p-highlight):hover,
+#todo .p-paginator .p-paginator-prev:not(.p-disabled):not(.p-highlight):hover,
+#todo .p-paginator .p-paginator-next:not(.p-disabled):not(.p-highlight):hover,
+#todo .p-paginator .p-paginator-last:not(.p-disabled):not(.p-highlight):hover {
+  background: #3b82f6;
+  color: beige;
+}
+
+
+/*Hover для цифр #todo*/
+#todo .p-paginator .p-paginator-pages,
+#todo .p-paginator-page:not(.p-highlight):hover {
+  background: #d2d0d0;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#todo .p-inputtext,
+#tododialog .p-inputtext {
+  background: #fff;
+  color: #000;
+}
+
+#tododialog .p-dialog .p-dialog-header,
+#tododialog .p-dialog .p-dialog-header .p-dialog-title {
+  background: #fff;
+  color: #000;
+  border: none;
+}
+
+#tododialog .p-dialog .p-dialog-content {
+  background: #ffffff;
+  color: #495057;
+  padding: 0 1.5rem 2rem 1.5rem;
+  height: 500px;
+  border: none;
+}
+
+#tododialog .p-button.p-button-text {
+  background: #3b82f6;
+  color: #fff;
+}
+
+#todoDelete .p-dialog .p-dialog-header,
+#todoDelete .p-dialog .p-dialog-header .p-dialog-title,
+#todoDelete .p-dialog-content {
+  background: white;
+  color: #333;
+  border: none;
+}
+
+#todoDelete .p-dialog .p-dialog-footer button {
+  background: #3b82f6;
+}
+
+
+.p-button.p-button-success, .p-buttonset.p-button-success > .p-button, .p-splitbutton.p-button-success > .p-button {
+  color: #ffffff;
+  background: #22C55E;
+  border: 1px solid #22C55E;
+  margin-right: 10px;
+}
+
+.p-button {
+  margin-top: 5px;
+  padding: 0.5rem 0.95rem;
+}
+
+.p-button.p-button-success {
+  padding: 0.5rem 1.45rem;
+}
+
+.p-button.p-button-icon-only.p-button-rounded {
+  height: 2.5rem;
+}
+
+.p-button.p-button-icon-only {
+  width: 2.5rem;
+}
+
+.p-datatable-wrapper table {
+  width: 100%;
+}
+
+p-table .p-datatable>.p-datatable-wrapper {
+  overflow: unset;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  text-align: center;
+  padding: 1rem 0.6rem;
+}
+
+.p-datatable .p-datatable-tbody > tr {
+  height: 5.3rem;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  word-break: break-all;
+  text-align: center;
+  padding: 1rem 0.6rem;
+}
+
+.p-datatable .p-datatable-header {
+  padding: 0.75rem 0.5rem;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+.p-dropdown .p-dropdown-trigger {
+  width: 1.5rem;
+}
+
+.todoHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todoHeader span {
+  margin-left: 5px;
+}
+
+.p-toast .p-toast-message.p-toast-message-success .p-toast-message-icon, .p-toast .p-toast-message.p-toast-message-success .p-toast-icon-close {
+  color: rgba(4, 218, 7, 0.74);
+}
+
+/*Movies styles*/
+.main-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #0c1d2e2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  inset: 0;
+  transform: scale(0);
+  transition: all .3s ease-in-out;
+}
+.movie-box:hover .overlay {
+
+  transform: scale(1);
+}
+
+/*paginator styles*/
+#movie-paginator {
+  color: #1386f1b6;
+}
+
+#movie-paginator .p-paginator-first,
+#movie-paginator .p-paginator-prev,
+#movie-paginator .p-paginator-next,
+#movie-paginator .p-paginator-last {
+  color: #fffeef;
+}
+#movie-paginator .p-paginator-first:not(.p-disabled):not(.p-highlight):hover,
+#movie-paginator .p-paginator-prev:not(.p-disabled):not(.p-highlight):hover,
+#movie-paginator .p-paginator-next:not(.p-disabled):not(.p-highlight):hover,
+#movie-paginator .p-paginator-last:not(.p-disabled):not(.p-highlight):hover {
+  background: rgba(19, 134, 241, 0.48);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+#movie-paginator .p-paginator-pages .p-paginator-page {
+  background-color: transparent;
+  border: 0 none;
+  color: #ffffff;
+  min-width: 3rem;
+  height: 3rem;
+  margin: 0.143rem;
+  transition: box-shadow 0.2s;
+  border-radius: 50%;
+}
+#movie-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #EFF6FF;
+  border: solid 1px rgba(19, 134, 241, 1);;;
+  color: rgba(19, 134, 241, 0.9);
+}
+#movie-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover {
+  background: rgba(19, 134, 241, 0.48);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+ /*popup*/
+#popup .p-dialog {
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  border: solid 1px #0e7ae7;
+  background: rgba(18, 20, 9, 0.55);
+}
+#popup .p-dialog-header {
+  border-bottom: 0 none;
+  background: transparent;
+  color: #bdc0c3;
+  padding: 1.5rem;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+#popup .p-dialog-header .p-dialog-header-icon {
+  color: #0e7ae7;
+}
+#popup .p-dialog-header .p-dialog-header-icon:enabled:hover {
+  color: #ffffff;
+  border-color: transparent;
+  background: rgba(19, 134, 241, 0.48);
+}
+
+#popup .p-dialog-content {
+  background: transparent;
+}
+
+#popup .p-dialog-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+#popup .p-dialog-content::-webkit-scrollbar-track {
+  background: rgba(19, 134, 241, 0.3);
+}
+
+#popup .p-dialog-content::-webkit-scrollbar-thumb {
+  background-color: rgba(7, 7, 7, 0.65);
+  border-radius: 20px;
+}
+
+
+/*Snake*/
+.snake {
+  background-image: url("assets/images/circle1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 1s ease-in;
+}
+
+.head {
+  background-color: transparent;
+  background-image: url("assets/images/icons8-snake-64.png");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+}
+
+.food {
+  /*border-radius: 50%;*/
+  background-image: url("assets/images/Mouse.png");
+  background-size: 100%;
+  /*background-size: cover;*/
+}
+
+.obstacle {
+  background-image: url("assets/images/Mushroom.png");
+  background-size: 100%;
+
+}
+
+@media (max-width: 550px) {
+  .todo-wrapper .todo{
+    width: 100vw;
+  }
+
+  .todoHeader {
+    flex-direction: column;
+  }
+
+  .p-input-icon-left {
+    width: 75vw;
+  }
+
+  .p-input-icon-left > .p-inputtext {
+    width: 100%;
+  }
+
+  .p-datatable .p-datatable-thead > tr > th {
+    padding: 0.8rem 0.2rem;
+  }
+
+  .p-datatable .p-datatable-tbody > tr > td {
+    word-break: break-all;
+    padding: 0.8rem 0.2rem;
+  }
+
+  .p-dropdown .p-dropdown-trigger {
+    margin-right: 5px;
+    width: 1rem;
+  }
+}

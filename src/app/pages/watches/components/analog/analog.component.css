@@ -1,0 +1,101 @@
+.analog-clock {
+  height: 25vw;
+  width: 25vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/assets/images/clock-sam.png') center/cover;
+  background-color: rgb(26, 24, 37);
+  border: 5px solid  #091330;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;;
+  position: relative;
+}
+
+.analog-clock::before {
+  content: "";
+  position: absolute;
+  width: 4%;
+  height: 4%;
+  border-radius: 50%;
+  background-color: #747474;
+  z-index: 10;
+}
+
+.hour, .minute, .second {
+  position: absolute;
+}
+
+.hours, .minutes, .seconds {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-radius: 50%;
+}
+
+.hours {
+  width: 1vw;
+  height: 10vw;
+}
+
+.hours::before {
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 50%;
+  background-color: #ffc700;
+  z-index: 5;
+  border-radius: 5px 5px 0 0;
+}
+
+.minutes {
+  width: 1vw;
+  height: 12vw;
+}
+
+.minutes::before {
+  content: "";
+  position: absolute;
+  width: 45%;
+  height: 50%;
+  background-color: #747474;
+  z-index: 6;
+  border-radius: 3px 3px 0 0;
+}
+
+.seconds {
+  width: 1vw;
+  height: 16vw;
+}
+
+.seconds::before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 60%;
+  background-color: #0183fd;
+  z-index: 7;
+  border-radius: 2px 2px 0 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .analog-clock {
+    width: 60vw;
+    height: 60vw;
+  }
+
+  .hours {
+    width: 2.3vw;
+    height: 23vw;
+  }
+
+  .minutes {
+    width: 2.3vw;
+    height: 28vw;
+  }
+
+  .seconds {
+    width: 2.3vw;
+    height: 36vw;
+  }
+}

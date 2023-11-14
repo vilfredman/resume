@@ -1,0 +1,40 @@
+<div class="snake-container">
+  <div class="score-card">
+    <div class="icon-container">
+      <div class="icon">
+        <img alt="Icon" src="/assets/images/icons8-question-mark-100.png">
+      </div>
+
+      <div class="tooltip">
+        <h3>Use the arrow keys to control the snake:</h3>
+        <br>
+        <h3>Press "Esc" for PAUSE.</h3>
+        <h3>Press "R" for RESTART.</h3>
+        <br>
+        <h3>At level 5, you will be able to walk through walls.</h3>
+        <h3>At level 10 you will have the opportunity to bite the snake, but you will lose your current level.</h3>
+      </div>
+    </div>
+    <h3>Best Score: {{model.bestScore}}</h3>
+    <h3>Current Score: {{foodService.currentScore}}</h3>
+    <h3>Level: {{model.level}}</h3>
+    <h3>Time: {{model.time | number: '2.0-0'}} {{'s'}}</h3>
+    <div class="restart-button" (click)="restart()">Restart</div>
+  </div>
+  <div class="game-board"></div>
+  <div *ngIf="model.isPaused && !model.gameOver" class="pause-overlay">
+    <h1>Paused</h1>
+    <p>Press ESC to resume</p>
+  </div>
+  <div *ngIf="this.model.gameOver" class="game-over">
+    <h1>Game is Over!</h1>
+  </div>
+  <div class="mobile-controls">
+    <nav class="o-pad">
+      <a (click)="dPadMovement(keysDirection.arrowUp)" class="up"></a>
+      <a (click)="dPadMovement(keysDirection.arrowRight)" class="right"></a>
+      <a (click)="dPadMovement(keysDirection.arrowDown)" class="down"></a>
+      <a (click)="dPadMovement(keysDirection.arrowLeft)" class="left"></a>
+    </nav>
+  </div>
+</div>

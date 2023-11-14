@@ -1,0 +1,76 @@
+.digital-clock {
+  height: 10.5vw;
+  width: 35vw;
+  margin: 40px;
+  background-color: rgb(26, 24, 37);
+  border: 5px solid  #091330;
+  border-radius: 5%;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 54px 55px, rgba(0, 0, 0, 0.12) 0 -12px 30px, rgba(0, 0, 0, 0.12) 0 4px 6px, rgba(0, 0, 0, 0.17) 0 12px 13px, rgba(0, 0, 0, 0.09) 0 -3px 5px;
+  position: relative;
+}
+
+.digital-clock .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+span {
+  margin-right: 1vw;
+  font-size: 3vw;
+  color:  #0183fd;
+}
+
+.digital-clock .box h2 {
+  width: 15vw;
+  font-size: 5.5vw;
+  background-image: linear-gradient(to right, #ffc700, #0183fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.digital-clock .box h2:nth-child(odd){
+  text-align: center;
+}
+
+.dot {
+  font-size: 5vw;
+  color:  #c0b6b6;
+  animation-name: blinker;
+  animation-iteration-count: infinite;
+  animation-timing-function:cubic-bezier(1, 0, 0, 1);
+  animation-duration: 1s;
+}
+
+@keyframes blinker {
+  from {
+    opacity: 0.0;
+  }
+
+  to {
+    opacity: 1.0;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .digital-clock {
+    height: 18vw;
+    width: 60vw;
+  }
+
+  .digital-clock .box h2 {
+    width: 25vw;
+    font-size: 10vw;
+  }
+
+  span {
+    margin-right: 1.5vw;
+    font-size: 5.5vw;
+  }
+
+  .dot {
+    font-size: 9vw;
+  }
+}
