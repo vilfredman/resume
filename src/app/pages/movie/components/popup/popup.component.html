@@ -1,0 +1,50 @@
+<p-dialog [(visible)]="dataService.popup" [draggable]="false" [modal]="true" [resizable]="false"
+          [style]="{ width: '800px', padding: '25px' }" header="{{movie.title}}" id="popup"
+>
+  <div class="movie-desc">
+    <div class="pop_content">
+      <div class="desc-image-box">
+          <div class="desc-image" [style.background-image]="'url(' + (movie.posterPath ? 'http://image.tmdb.org/t/p/original' + movie.posterPath : 'assets/images/Not-Available.png') + ')'" [style.background-repeat]="'no-repeat'" [style.background-size]="'cover'"></div>
+       </div>
+    <div class="desc-info-content">
+      <div class="movie_info">
+        <div class="desc_title">{{movie.title}}</div>
+        <div class="movie_desc_item movie_info">
+          <div class="label">
+								<span>
+									<img src="assets/images/IMDB_Logo.png" alt="Movie names">
+									:
+								</span>
+          </div>
+          <div class="movie-avarage movie-avarage--{{movie.voteAverage >= 8 ? 'green' : movie.voteAverage > 5 ? 'yellow' : 'red'}}">{{movie.voteAverage.toFixed(1)}}</div>
+      </div>
+      <div class="movie_desc_item movie_info">
+        <div class="label">Genre:</div>
+        <div class="value">{{genres}}</div>
+      </div>
+      <div class="movie_desc_item movie_info">
+        <div class="label">Release date:</div>
+        <div class="value">{{movie.releaseDate}}</div>
+      </div>
+      <div class="movie_desc_item movie_info">
+        <div class="label">Voted:</div>
+        <div class="value">{{movie.voteCount}}</div>
+      </div>
+    </div>
+    <div class="movie_text">
+      <span class="desc_about_title">Short Description:</span>
+      <span class="desc_about_text">{{movie.overview}}</span>
+    </div>
+  </div>
+  </div>
+    <div class="trailer"><iframe
+            [src]="trailerURL"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+            frameborder="0" height="315"
+            title="YouTube video player"
+            width="90%"></iframe>
+    </div>
+  </div>
+
+</p-dialog>

@@ -1,0 +1,19 @@
+<header class="top">
+  <div class="nav container-header">
+    <a href="#" class="logo">
+      <span>U<span>A</span></span>Movie
+    </a>
+    <div class="search-box">
+      <span class="p-float-label">
+        <input [(ngModel)]="title" id="title" pInputText/>
+        <label for="title">title</label>
+    </span>
+      <span class="p-float-label">
+        <input [(ngModel)]="year" id="year" pInputText/>
+        <label for="year">year</label>
+    </span>
+      <p-button (click)="search()" label="Search"></p-button>
+    </div>
+
+  </div>
+</header>

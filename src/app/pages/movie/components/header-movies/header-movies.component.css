@@ -1,0 +1,62 @@
+.container-header {
+  max-width: 1100px;
+  margin:0 auto;
+  width: 100%;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgb(39, 37, 37, 0.5);
+  z-index: 100;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+}
+
+.logo {
+  font-size: 1.3rem;
+  color: rgb(206, 224, 240);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.logo span {
+  color: #ffc700;
+}
+
+.logo span span {
+  color: #0183fd;
+}
+
+.search-box {
+  display: flex;
+  justify-content: space-between;
+  width: 60%
+}
+
+.p-inputtext {
+  border-radius: 2rem;
+  width: 90%;
+}
+
+@media (max-width: 500px) {
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.25rem 0.75rem;
+  }
+
+  .search-box {
+    width: 100%;
+  }
+}

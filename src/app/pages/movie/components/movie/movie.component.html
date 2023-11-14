@@ -1,0 +1,18 @@
+
+      <div class="overlay" (click)="openPopup()">
+        <div class="movie-avarage movie-avarage--{{movie.voteAverage >= 8 ? 'green' : movie.voteAverage > 5 ? 'yellow' : 'red'}}">{{movie.voteAverage.toFixed(1)}}</div>
+        <div class="icon" id ="{{movie.id}}">
+          <i class='bx bx-info-circle'></i>
+        </div>
+      </div>
+      <div class="image-container">
+          <div class="movie-img" [style.background-image]="'url(' + (movie.posterPath ? 'http://image.tmdb.org/t/p/original' + movie.posterPath : 'assets/images/Not-Available.png') + ')'" [style.background-repeat]="'no-repeat'" [style.background-size]="'cover'"></div>
+
+      </div>
+      <div class="movie-quality">Full HD</div>
+      <div class="movie-text">
+        <div class="movie-name"> <strong>{{movie.title}}</strong> </div>
+        <div class="movie-genre">
+          <span>{{genres}}</span>
+        </div>
+      </div>
